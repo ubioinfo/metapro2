@@ -30,6 +30,21 @@ devtools::install_github("ubioinfo/metapro2")
 
 ```
 
+⚠️ Note for macOS users:
+You may need to install the Xcode Command Line Tools using:
+xcode-select --install
+
+⚠️ Note for Windows users:
+You must install Rtools for compilation support.
+
+If you have received a .tar.gz source package (e.g., metapro2_0.1.0.tar.gz), you can also install it manually:
+
+install.packages("path/to/metapro2_0.1.0.tar.gz", repos = NULL, type = "source")
+
+
+
+
+
 ## Running wARTP
 ```r
 library(metapro2)
