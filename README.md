@@ -7,3 +7,37 @@ wARTP and ordmeta also provide estimates of signal sparsity among the combined p
 Original ARTP method is a powerful empirical p-value combination method for both indenepdent and dependent p-values, but its long computation time is a major drawback. 
 Thus, we implement simulation-based ARTP in Rcpp which is an order of magnitude faster than ARTP R code. For independent p-values, sample-size weighting is tested for both wARTP and wFisher. 
 wARTP exhibits the highest power for sparse signals, while wFisher performs the best for dense signals. wARTP is a versatile algorithm that exhibit high power for various sparsity and correlation levels.
+
+
+
+# install.packages("devtools")  # if not already installed
+devtools::install_github("ubioinfo/metapro2")
+
+library(metapro2)
+
+
+# Generate 10 random p-values
+set.seed(123)
+p <- runif(10)
+
+# No correlation assumed (identity matrix)
+cor_mat <- diag(10)
+
+# Run wARTP with 10,000 permutations
+res <- wARTP(p, cor_mat = cor_mat, B2 = 10000)
+
+# View results
+res$p_value     #Combined p-value
+res$signal_sparsity   #Optimal number of p-values divided by the total number of p-values.
+
+# Simulated p-values and weights
+p <- c(0.01, 0.20, 0.05, 0.02)
+weights <- c(1, 2, 1, 1)
+
+# wFisher and ordmeta
+res <- wFisher(p, weights)
+res$p_value
+
+res <- ordmeta(p)
+res$p_value
+res$opt_ord  #Optimal order indicating the number of core p-values, similar as signal sparsity in wARTP
