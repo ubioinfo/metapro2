@@ -46,3 +46,20 @@ res <- wARTP(p, cor_mat = cor_mat, B2 = 10000)
 # View result
 res$p_value
 res$signal_sparsity  # Estimated proportion of informative p-values
+
+
+
+library(metapro2)
+
+# Simulated p-values and weights
+p <- c(0.01, 0.20, 0.05, 0.02)
+weights <- c(1, 2, 1, 1)
+
+# Weighted Fisher method
+res <- wFisher(p, weights)
+res$p_value
+
+# Estimate sparsity using ordmeta
+res <- ordmeta(p)
+res$p_value
+res$opt_ord  # Estimated number of core p-values
