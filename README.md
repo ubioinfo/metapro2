@@ -66,4 +66,4 @@ res$p_value
 # Estimate sparsity using ordmeta
 res <- ordmeta(p)
 res$p_value
-res$opt_ord  # Estimated number of core p-values
+res$opt_ord  # Estimated number of informative p-values
