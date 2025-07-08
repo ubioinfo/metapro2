@@ -30,6 +30,7 @@ You can install **metapro2** from GitHub:
 devtools::install_github("ubioinfo/metapro2")
 
 
+## Running wARTP
 
 library(metapro2)
 
