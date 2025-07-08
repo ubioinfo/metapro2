@@ -1,0 +1,12 @@
+
+export(ordmeta)
+
+export(simul_corr)
+export(simul_weight)
+
+export(wFisher)
+export(wARTP)
+export(lancaster)
+export(wZ)
+useDynLib(metapro2, .registration = TRUE)
+importFrom(Rcpp, evalCpp)
