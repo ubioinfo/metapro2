@@ -15,6 +15,7 @@ devtools::install_github("ubioinfo/metapro2")
 
 library(metapro2)
 
+
 # Generate 10 random p-values
 set.seed(123)
 p <- runif(10)
@@ -33,7 +34,7 @@ res$signal_sparsity   #Optimal number of p-values divided by the total number of
 p <- c(0.01, 0.20, 0.05, 0.02)
 weights <- c(1, 2, 1, 1)
 
-# Apply weighted Fisher's method
+# wFisher and ordmeta
 res <- wFisher(p, weights)
 res$p_value
 
