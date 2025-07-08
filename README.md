@@ -23,7 +23,7 @@ These are useful in meta-analysis, gene-set testing, and multi-omics integration
 
 ## Installation
 
-You can install the development version of **metapro2** from GitHub:
+You can install **metapro2** from GitHub:
 
 ```r
 # install.packages("devtools")  # if not installed yet
