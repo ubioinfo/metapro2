@@ -28,3 +28,21 @@ You can install **metapro2** from GitHub:
 ```r
 # install.packages("devtools")  # if not installed yet
 devtools::install_github("ubioinfo/metapro2")
+
+
+
+library(metapro2)
+
+# Generate 10 random p-values
+set.seed(123)
+p <- runif(10)
+
+# Identity correlation matrix
+cor_mat <- diag(10)
+
+# Run wARTP with 10,000 permutations
+res <- wARTP(p, cor_mat = cor_mat, B2 = 10000)
+
+# View result
+res$p_value
+res$signal_sparsity  # Estimated proportion of informative p-values
