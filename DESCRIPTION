@@ -1,0 +1,15 @@
+Package: metapro2
+Type: Package
+Title: Weighted P-value Combination Tools
+Version: 0.1.0
+Author: Research Team
+Maintainer: Research Team <team@example.com>
+Description: Provides weighted ARTP, weighted Fisher's, and order-statistics based meta-analysis for p-value combination in both independent and dependent data.
+Depends: R (>= 3.6.0), Rcpp, RcppArmadillo
+LinkingTo: Rcpp, RcppArmadillo
+License: GPL-3
+Encoding: UTF-8
+RoxygenNote: 7.2.3
+VignetteBuilder: knitr
+NeedsCompilation: yes
+Packaged: 2025-07-08 14:20:16 UTC; nam

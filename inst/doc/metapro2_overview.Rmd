@@ -1,0 +1,23 @@
+
+---
+title: "metapro2 Overview"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{metapro2 Overview}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+# Introduction
+
+The `metapro2` R package provides powerful p-value combination methods such as weighted ARTP, weighted Fisher's method, and ordmeta.
+
+# Basic Example
+
+```{r}
+library(metapro2)
+set.seed(123)
+pvals <- runif(50) / 5
+res <- wARTP(pvals)
+print(res)
+```
