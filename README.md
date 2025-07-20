@@ -67,3 +67,60 @@ res$p_value
 res <- ordmeta(p)
 res$p_value
 res$opt_ord  # Estimated number of informative p-values
+```
+
+🖥️ Platform-specific Installation Notes
+✅ macOS & Linux users
+For most macOS and Linux users, installing from GitHub should work smoothly as long as you have:
+
+Xcode Command Line Tools installed (for macOS):
+
+sh
+xcode-select --install
+A working C++ compiler (e.g., g++, clang++) with support for C++17
+
+Internet access for downloading dependencies
+
+In case you encounter errors involving RcppArmadillo.h or LAPACK/BLAS, try:
+
+r
+install.packages("RcppArmadillo", type = "source")
+install.packages("Rcpp", type = "source")
+If necessary, you may also define a ~/.R/Makevars file with:
+
+make
+CXXFLAGS = -O2 -Wall -pedantic
+CXX11FLAGS = -std=c++11
+
+✅ Windows users
+Installing from GitHub on Windows may require additional configuration:
+
+Install Rtools, and ensure it’s properly configured:
+
+r
+Sys.which("make")
+Install dependencies from source:
+
+r
+install.packages("RcppArmadillo", type = "source")
+install.packages("Rcpp", type = "source")
+Create or edit the file below:
+
+swift
+C:/Users/YourName/Documents/.R/Makevars.win
+with the following contents (adjust for your system):
+
+make
+CXXFLAGS = -I"C:/Users/YourName/AppData/Local/R/win-library/4.5/Rcpp/include" -I"C:/Users/YourName/AppData/Local/R/win-library/4.5/RcppArmadillo/include"
+CXX14FLAGS = $(CXXFLAGS)
+PKG_LIBS = -llapack -lblas -lgfortran -lquadmath
+If you encounter undefined reference to 'dpotrf_', 'quadmath_snprintf', or 'RcppArmadillo.h not found', the above settings usually resolve the issue.
+
+🚀 Installation (All platforms)
+r
+# Option 1: Install from GitHub (latest version)
+devtools::install_github("ubioinfo/metapro2")
+
+# Option 2: Install from release source tarball
+install.packages("https://github.com/ubioinfo/metapro2/releases/download/v0.1.0/metapro2_0.1.0.tar.gz",
+                 repos = NULL, type = "source")
