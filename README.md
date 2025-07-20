@@ -100,7 +100,7 @@ CXX11FLAGS = -std=c++11
 
 ---
 
-### ✅ Windows
+### Windows
 
 Installing from GitHub on Windows may require some additional configuration:
 
