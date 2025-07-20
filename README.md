@@ -76,67 +76,77 @@ res$opt_ord  # Estimated number of informative p-values
 For most macOS and Linux users, installing from GitHub should work smoothly if the following are met:
 
 - **Xcode Command Line Tools** installed (macOS only):
-  ```sh
-  xcode-select --install
-A working C++ compiler (e.g., g++, clang++) with support for C++17
 
-Internet access for downloading dependencies
+```sh
+xcode-select --install
+```
 
-If you encounter errors related to RcppArmadillo.h or LAPACK/BLAS, try reinstalling the packages from source:
+- **A working C++ compiler** (e.g., `g++`, `clang++`) with support for **C++17**
 
-r
-복사
-편집
+- **Internet access** for downloading dependencies
+
+If you encounter errors related to `RcppArmadillo.h` or `LAPACK/BLAS`, try reinstalling the packages from source:
+
+```r
 install.packages("RcppArmadillo", type = "source")
 install.packages("Rcpp", type = "source")
-You may also define a ~/.R/Makevars file with the following content:
+```
 
-make
-복사
-편집
+You may also define a `~/.R/Makevars` file with the following content:
+
+```make
 CXXFLAGS = -O2 -Wall -pedantic
 CXX11FLAGS = -std=c++11
-✅ Windows
+```
+
+---
+
+### ✅ Windows
+
 Installing from GitHub on Windows may require some additional configuration:
 
-Install Rtools, and verify it’s properly configured:
+- Install **Rtools**, and verify it’s properly configured:
 
-r
-복사
-편집
+```r
 Sys.which("make")
-Install dependencies from source:
+```
 
-r
-복사
-편집
+- Install dependencies from source:
+
+```r
 install.packages("RcppArmadillo", type = "source")
 install.packages("Rcpp", type = "source")
-Create or edit the file below:
+```
 
-swift
-복사
-편집
+- Create or edit the file below:
+
+```
 C:/Users/YourName/Documents/.R/Makevars.win
+```
+
 With the following content (adjust paths as needed):
 
-make
-복사
-편집
+```make
 CXXFLAGS = -I"C:/Users/YourName/AppData/Local/R/win-library/4.5/Rcpp/include" -I"C:/Users/YourName/AppData/Local/R/win-library/4.5/RcppArmadillo/include"
 CXX14FLAGS = $(CXXFLAGS)
 PKG_LIBS = -llapack -lblas -lgfortran -lquadmath
-If you encounter errors like undefined reference to 'dpotrf_', quadmath_snprintf, or RcppArmadillo.h not found, the above settings usually resolve them.
+```
 
-🚀 Installation (All Platforms)
-Option 1: Install from GitHub (latest version)
-r
-복사
-편집
+If you encounter errors like `undefined reference to 'dpotrf_'`, `quadmath_snprintf`, or `RcppArmadillo.h not found`, the above settings usually resolve them.
+
+---
+
+## 🚀 Installation (All Platforms)
+
+### Option 1: Install from GitHub (latest version)
+
+```r
 devtools::install_github("ubioinfo/metapro2")
-Option 2: Install from release source tarball
-r
-복사
-편집
+```
+
+### Option 2: Install from release source tarball
+
+```r
 install.packages("https://github.com/ubioinfo/metapro2/releases/download/v0.1.0/metapro2_0.1.0.tar.gz",
                  repos = NULL, type = "source")
+```
