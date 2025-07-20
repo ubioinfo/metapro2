@@ -41,8 +41,8 @@ p <- runif(10)
 # Identity correlation matrix
 cor_mat <- diag(10)
 
-# Run wARTP with 10,000 permutations
-res <- wARTP(p, cor_mat = cor_mat, B2 = 10000)
+# Run wARTP with 50,000 permutations (default)
+res <- wARTP(p, cor_mat = cor_mat, B2 = 50000) #the same as wARTP(p) in this case.
 
 # View result
 res$p_value
