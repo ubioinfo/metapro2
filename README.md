@@ -69,7 +69,8 @@ res$p_value
 res$opt_ord  # Estimated number of informative p-values
 ```
 
-🖥️ Platform-specific Installation Notes
+## Platform-specific Installation Notes
+
 ✅ macOS & Linux users
 For most macOS and Linux users, installing from GitHub should work smoothly as long as you have:
 
