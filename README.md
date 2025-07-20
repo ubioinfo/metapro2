@@ -83,7 +83,6 @@ xcode-select --install
 
 - **A working C++ compiler** (e.g., `g++`, `clang++`) with support for **C++17**
 
-- **Internet access** for downloading dependencies
 
 If you encounter errors related to `RcppArmadillo.h` or `LAPACK/BLAS`, try reinstalling the packages from source:
 
@@ -136,7 +135,7 @@ If you encounter errors like `undefined reference to 'dpotrf_'`, `quadmath_snpri
 
 ---
 
-## 🚀 Installation (All Platforms)
+## Installation (All Platforms)
 
 ### Option 1: Install from GitHub (latest version)
 
