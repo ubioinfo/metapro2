@@ -11,7 +11,7 @@ wARTP exhibits the highest power for sparse signals, while wFisher performs the 
 
 # metapro2
 
-The `metapro2` R package provides efficient methods for combining p-values in genomic studies, particularly when signal sparsity or correlation structures are present. It includes a fast Rcpp implementation of:
+The `metapro2` R package provides efficient methods for combining p-values in omics studies, particularly when signal sparsity or correlation structures are present. It includes a fast Rcpp implementation of:
 
 - `wARTP`: weighted adaptive rank truncated product method  
 - `wFisher`: weighted Fisher’s method  
