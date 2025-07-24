@@ -60,8 +60,7 @@ p <- c(0.01, 0.20, 0.05, 0.02)
 weights <- c(1, 2, 1, 1)
 
 # Weighted Fisher method
-res <- wFisher(p, weights)
-res$p_value
+wFisher(p, weights)
 
 # Estimate sparsity using ordmeta
 res <- ordmeta(p)
